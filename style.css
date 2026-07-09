@@ -1,0 +1,247 @@
+
+/* DESIGN SYSTEM & RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+:root {
+    --bg-global: #fcf9f9;
+    --texto-principal: #1c1a1a;
+    --texto-secundario: #6e6566;
+    --rosa-accent: #ff477e;
+    --rosa-suave: #fff0f3;
+    --transicao-suave: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+body {
+    background-color: var(--bg-global);
+    color: var(--texto-principal);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* HERO SECTION (TOPO MINIMALISTA E CHIC) */
+.hero-site {
+    background: linear-gradient(135deg, #1c1a1a 0%, #2d2526 100%);
+    color: #ffffff;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-conteudo {
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.tagline {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--rosa-accent);
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.hero-site h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.hero-site h1 span {
+    color: var(--rosa-accent);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.hero-site p {
+    font-size: 1.15rem;
+    color: #d1c7c8;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+/* SEÇÃO PRINCIPAL */
+.conteudo-principal {
+    flex: 1;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    width: 100%;
+}
+
+.secao-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.secao-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.secao-header p {
+    color: var(--texto-secundario);
+    font-size: 1rem;
+}
+
+/* GRID RESPONSIVO PREMIUM */
+.grid-categorias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+/* CARDS DE ALTISSIMO NÍVEL (HOVERS AVANÇADOS) */
+.card-premium {
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--texto-principal);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    transition: var(--transicao-suave);
+}
+
+/* Wrapper da Imagem para conter o efeito de Zoom */
+.wrapper-imagem {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    position: relative;
+}
+
+.wrapper-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transicao-suave);
+}
+
+.card-info {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card-info h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    transition: var(--transicao-suave);
+}
+
+.card-info p {
+    font-size: 0.95rem;
+    color: var(--texto-secundario);
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex: 1;
+}
+
+.btn-explorar {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--texto-principal);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transicao-suave);
+}
+
+.btn-explorar .seta {
+    transition: var(--transicao-suave);
+}
+
+/* 🌟 AÇÕES DO HOVER PREMIUM */
+.card-premium:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 22px 40px rgba(255, 71, 126, 0.08); /* Sombra sutil com a tonalidade do rosa */
+    border-color: rgba(255, 71, 126, 0.2);
+}
+
+/* Efeito 1: Imagem cresce suavemente lá dentro */
+.card-premium:hover .wrapper-imagem img {
+    transform: scale(1.08);
+}
+
+/* Efeito 2: O título muda para o rosa principal */
+.card-premium:hover h3 {
+    color: var(--rosa-accent);
+}
+
+/* Efeito 3: O texto do botão ganha a cor rosa e a seta empurra para o lado */
+.card-premium:hover .btn-explorar {
+    color: var(--rosa-accent);
+}
+
+.card-premium:hover .btn-explorar .seta {
+    transform: translateX(6px);
+}
+
+/* RODAPÉ PROFISSIONAL */
+.rodape-profissional {
+    background-color: #1c1a1a;
+    color: #ffffff;
+    padding: 50px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.rodape-conteudo {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.logo-rodape {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: #9e9294;
+    font-weight: 300;
+}
+
+/* AJUSTES DE RESPONSIVIDADE (MOBILE) */
+@media (max-width: 768px) {
+    .hero-site {
+        padding: 70px 20px;
+    }
+    
+    .hero-site h1 {
+        font-size: 2.5rem;
+    }
+    
+    .rodape-conteudo {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .grid-categorias {
+        gap: 25px;
+    }
+}
